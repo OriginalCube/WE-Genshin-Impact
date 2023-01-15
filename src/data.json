@@ -1,0 +1,54 @@
+{
+  "daily": {
+    "book": [
+      {
+        "name": "Mondstadt",
+        "label": [],
+        "character": [
+          ["Aloy", "Amber", "Barbara", "Diona", "Klee", "Sucrose", "Tartaglia"],
+          ["Bennet", "Diluc", "Eula", "Jean", "Mona", "Noelle", "Razor"],
+          ["Albedo", "Fischl", "Kaeya", "Lisa", "Rosaria", "Venti"]
+        ]
+      },
+      {
+        "name": "Liyue",
+        "label": [],
+        "character": [
+          ["Keqing", "Ningguang", "Qiqi", "Shenhe", "Xiao", "Yelan"],
+          ["Chongyun", "Ganyu", "Hu Tao", "Kazuha", "Xiangling", "Yun Jin"],
+          ["Beidou", "Xingqui", "Xinyan", "Yanfei", "Zhongli"]
+        ]
+      },
+      {
+        "name": "Inazuma",
+        "label": [],
+        "character": [
+          ["Kokomi", "Heizou", "Thoma", "Yoimiya"],
+          ["Itto", "Ayaka", "Ayato", "Kujou Sara", "Shinobu"],
+          ["Gorou", "Raiden", "Sayu", "Yae Miko"]
+        ]
+      },
+      {
+        "name": "Sumeru",
+        "label": [],
+        "character": [
+          ["Candace", "Cyno", "Faruzan", "Tighnari"],
+          ["Alhaitham", "Dori", "Layla", "Nahida"],
+          ["Collei", "Nilou", "Wanderer"]
+        ]
+      }
+    ],
+    "weapon": {}
+  },
+  "songs": [
+    {
+      "name": "A Glorious Awakening"
+    },
+    {
+      "name": "Shirasagi Princess"
+    },
+    {
+      "name": "Let's Go, Crimson Knight!"
+    }
+  ]
+}
