@@ -5,7 +5,6 @@ const VideoCanvas = () => {
   const canvasRef = React.useRef(null);
 
   React.useEffect(() => {
-    console.log("render");
     const canvas = canvasRef.current;
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
@@ -21,17 +20,9 @@ const VideoCanvas = () => {
     };
   }, []);
 
-  const reRender = () => {
-    console.log("reRender");
-  };
-
   return (
     <>
-      <canvas
-        ref={canvasRef}
-        style={{ position: "absolute" }}
-        onClick={reRender}
-      />
+      <canvas ref={canvasRef} style={{ position: "absolute" }} />
       <video
         autoPlay
         muted

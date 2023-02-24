@@ -6,7 +6,7 @@
         "label": [],
         "character": [
           ["Aloy", "Amber", "Barbara", "Diona", "Klee", "Sucrose", "Tartaglia"],
-          ["Bennet", "Diluc", "Eula", "Jean", "Mona", "Noelle", "Razor"],
+          ["Bennett", "Diluc", "Eula", "Jean", "Mona", "Noelle", "Razor"],
           ["Albedo", "Fischl", "Kaeya", "Lisa", "Rosaria", "Venti"]
         ]
       },
@@ -24,7 +24,7 @@
         "label": [],
         "character": [
           ["Kokomi", "Heizou", "Thoma", "Yoimiya"],
-          ["Itto", "Ayaka", "Ayato", "Kujou Sara", "Shinobu"],
+          ["Ayaka", "Itto", "Ayato", "Kujou Sara", "Shinobu"],
           ["Gorou", "Raiden", "Sayu", "Yae Miko"]
         ]
       },
@@ -42,13 +42,96 @@
   },
   "songs": [
     {
-      "name": "A Glorious Awakening"
+      "name": "A Glorious Awakening",
+      "sub": "Kokomi"
     },
     {
-      "name": "Shirasagi Princess"
+      "name": "Shirasagi Princess",
+      "sub": "Ayaka"
     },
     {
-      "name": "Let's Go, Crimson Knight!"
+      "name": "Let's Go, Crimson Knight!",
+      "sub": "Klee"
+    },
+    {
+      "name": "Termination of Desires",
+      "sub": "Raiden"
+    },
+    {
+      "name": "Path of Yaksha",
+      "sub": "Xiao"
+    },
+    {
+      "name": "Rex Incognito",
+      "sub": "Zhongli"
+    },
+    {
+      "name": "Qilin's Prance",
+      "sub": "Ganyu"
+    },
+    {
+      "name": "Any Last Words",
+      "sub": "Hu Tao"
+    },
+    {
+      "name": "Dance of Aphros",
+      "sub": "Eula"
+    },
+    {
+      "name": "Nimble as Lightning",
+      "sub": "Keqing"
+    },
+    {
+      "name": "Surasthana Fantasia",
+      "sub": "Nahida"
+    },
+    {
+      "name": "Winding Through Avidya",
+      "sub": "Tighnari"
+    },
+    {
+      "name": "Blossoms of Summer Night",
+      "sub": "Yoimiya"
+    },
+    {
+      "name": "Graceful Dexterity",
+      "sub": "Yelan"
+    },
+    {
+      "name": "Drifter's Destiny",
+      "sub": "Kazuha"
+    },
+    {
+      "name": "Contemplation in Snow",
+      "sub": "Albedo"
+    },
+    {
+      "name": "Letter From Ajax",
+      "sub": "Tartaglia"
+    },
+    {
+      "name": "Lotus of Haftkarsvar",
+      "sub": "Nilou"
+    },
+    {
+      "name": "Nothing but Trickery",
+      "sub": "Yae Miko"
+    },
+    {
+      "name": "Preserver of Fortune",
+      "sub": "Qiqi"
+    },
+    {
+      "name": "Surge of Prophecies",
+      "sub": "Mona"
+    },
+    {
+      "name": "The Crane Cries",
+      "sub": "Shenhe"
+    },
+    {
+      "name": "Time to Shine",
+      "sub": "Itto"
     }
   ]
 }
