@@ -32,12 +32,13 @@ const MusicPlayer = (props) => {
 
   const skipButton = () => {
     if (replay === false) {
+      setMuted(false);
       setSongIndex(Math.floor(mainData["songs"].length * Math.random()));
       props.handleImageId();
-      audioBitePlay(0);
     } else {
       audioRef.current.play();
     }
+    audioBitePlay(0);
   };
 
   React.useEffect(() => {
@@ -117,9 +118,11 @@ const MusicPlayer = (props) => {
   React.useEffect(() => {
     if (isPlaying) {
       audioRef.current.pause();
+      setMuted(true);
       startTimer();
     } else {
       audioRef.current.play();
+      setMuted(false);
     }
   }, [isPlaying]);
 
