@@ -79,7 +79,7 @@ const Main = () => {
 
   React.useEffect(() => {
     if (!Array.isArray(imageData) || !imageData.length) {
-      setMainImage("./assets/images/wallpaper_0.png");
+      setMainImage("./assets/images/wallpaper-default.jpg");
     } else {
       setMainImage("file:///" + imageData[imageId]);
     }
