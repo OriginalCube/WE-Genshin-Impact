@@ -175,7 +175,6 @@ const MusicPlayer = (props) => {
               onClick={addVolume}
               alt=""
             />
-            <img src="./assets/icons/mute.png" onClick={volumeMute} alt="" />
             <img
               src={`./assets/icons/${!replay ? "replay" : "replayToggle"}.png`}
               onClick={onReplay}
