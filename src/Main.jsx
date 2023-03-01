@@ -16,7 +16,7 @@ const Main = () => {
   const [imageId, setImageId] = React.useState(0);
   const [mainImage, setMainImage] = React.useState("");
   const [serverTime, setServerTime] = React.useState(0);
-  const [canvasId, setCanvasId] = React.useState(0);
+  const [canvasId, setCanvasId] = React.useState(2);
   //Create a local storage to hold 3 Variables. Technically 4 if you include vol but focus on 4.
 
   const handleOption = () => {
@@ -91,7 +91,7 @@ const Main = () => {
       setPlayer(true);
       localStorage.setItem(
         "genshin-02",
-        `[{"option":true},{"player":true},{"backgroundMode":true}, {"server":0}, {"canvasId": 0}] `
+        `[{"option":true},{"player":true},{"backgroundMode":true}, {"server":0}, {"canvasId": 2}] `
       );
     } else {
       const tempData = JSON.parse(localStorage.getItem("genshin-02"));
