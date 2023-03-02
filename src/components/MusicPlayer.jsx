@@ -16,6 +16,7 @@ const MusicPlayer = (props) => {
   const [replay, setReplay] = React.useState(false);
   const [shuffle, setShuffle] = React.useState(false);
   const [playlist, setPlaylist] = React.useState(true);
+  const [playlistPages, setPlaylistPages] = React.useState(0);
   const intervalRef = React.useRef();
   const audioRef = React.useRef(new Audio());
   const isReady = React.useRef(true);
@@ -139,11 +140,23 @@ const MusicPlayer = (props) => {
     audioBitePlay(0);
   };
 
+  const onChangeId = (e) => {
+    setSongIndex(e);
+  };
+
   const onPlaylist = (e) => {
     if (e === true) {
       setPlaylist(true);
     }
     audioBitePlay(0);
+  };
+
+  const onPlaylistPages = () => {
+    if (playlistPages + 1 < mainData["songs"].length / 4) {
+      setPlaylistPages(playlistPages + 1);
+    } else {
+      setPlaylistPages(0);
+    }
   };
 
   React.useEffect(() => {
@@ -167,17 +180,29 @@ const MusicPlayer = (props) => {
       clearInterval(intervalRef.current);
     };
   }, []);
-  // {playlist ? (
-  //           <div className="playlist-container">
-  //             <p>Playlist</p>
-  //             {mainData["songs"].map((e, index) => (
-  //               <SongItem name={e.name} id={index} key={index} charName={e.sub} />
-  //             ))}
-  //           </div>
-  //        ) : null}
+
   return (
     <>
-      <div className="playlist"></div>
+      <div className="playlist">
+        {playlist ? (
+          <div className="playlist-container">
+            <div className="playlist-title" onClick={onPlaylistPages}>
+              <p className="genshin-font">Playlist</p>{" "}
+            </div>
+            {mainData["songs"]
+              .slice(playlistPages * 4, playlistPages * 4 + 4)
+              .map((e, index) => (
+                <SongItem
+                  name={e.name}
+                  id={playlistPages * 4 + index}
+                  onChangeId={onChangeId}
+                  key={index}
+                  charName={e.sub}
+                />
+              ))}
+          </div>
+        ) : null}
+      </div>
       <div className="genshin-font music-player">
         <div>
           <input
