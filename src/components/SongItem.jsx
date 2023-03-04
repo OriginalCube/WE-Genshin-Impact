@@ -11,7 +11,7 @@ const SongItem = (props) => {
       </div>
       <div className="song-text">
         <p className="genshin-font song-title ">{props.name}</p>{" "}
-        <p className="genshin-font song-sub ">{props.charName}</p>
+        <p className="genshin-font song-sub ">{props.charName}'s theme</p>
       </div>
     </div>
   );

@@ -65,6 +65,7 @@ const MusicPlayer = (props) => {
 
   React.useEffect(() => {
     audioRef.current.pause();
+    setMuted(false);
     setCharName(mainData["songs"][songIndex].sub);
     audioRef.current.src = `./assets/characters/${mainData["songs"][songIndex].sub}/${mainData["songs"][songIndex].name}.mp3`;
     audioRef.current.volume = volume;
@@ -141,6 +142,7 @@ const MusicPlayer = (props) => {
   };
 
   const onChangeId = (e) => {
+    audioBitePlay(1);
     setSongIndex(e);
   };
 
@@ -152,11 +154,12 @@ const MusicPlayer = (props) => {
   };
 
   const onPlaylistPages = () => {
-    if (playlistPages + 1 < mainData["songs"].length / 4) {
+    if (playlistPages + 1 < mainData["songs"].length / 6) {
       setPlaylistPages(playlistPages + 1);
     } else {
       setPlaylistPages(0);
     }
+    audioBitePlay(0);
   };
 
   React.useEffect(() => {
@@ -186,20 +189,35 @@ const MusicPlayer = (props) => {
       <div className="playlist">
         {playlist ? (
           <div className="playlist-container">
-            <div className="playlist-title" onClick={onPlaylistPages}>
-              <p className="genshin-font">Playlist</p>{" "}
-            </div>
-            {mainData["songs"]
-              .slice(playlistPages * 4, playlistPages * 4 + 4)
-              .map((e, index) => (
-                <SongItem
-                  name={e.name}
-                  id={playlistPages * 4 + index}
-                  onChangeId={onChangeId}
-                  key={index}
-                  charName={e.sub}
+            <div className="playlist-title">
+              <div className="playlist-item-image">
+                <img src="./assets/icons/album_cover.jpg" alt="" />
+              </div>
+              <div className="playlist-item-text">
+                <p className="genshin-font playlist-main">Character Playlist</p>
+                <p className="genshin-font playlist-sub">The Stellar Moments</p>
+                <img
+                  onClick={onPlaylistPages}
+                  src="./assets/icons/markpoint.png"
+                  style={{ opacity: ".75" }}
+                  alt=""
                 />
-              ))}
+              </div>
+            </div>
+            <div className="song-item-container">
+              {mainData["songs"]
+                .slice(playlistPages * 6, playlistPages * 6 + 6)
+                .map((e, index) => (
+                  <SongItem
+                    name={e.name}
+                    id={playlistPages * 6 + index}
+                    onChangeId={onChangeId}
+                    key={index}
+                    charName={e.sub}
+                    songIndex={songIndex}
+                  />
+                ))}
+            </div>
           </div>
         ) : null}
       </div>

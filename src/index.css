@@ -121,8 +121,9 @@ code {
 }
 
 .playlist-title {
+  display: flex;
+  flex-direction: row;
   height: 22%;
-  text-align: center;
   background-color: rgba(15, 28, 71, 0.4);
   font-size: 1.875rem; /* 30px */
   line-height: 2.25rem; /* 36px */
@@ -130,46 +131,88 @@ code {
   border-bottom: 3px solid rgba(255, 255, 255, 0.9);
 }
 
+.playlist-item-image {
+  flex-grow: 1;
+  margin-top: 5%;
+  margin-left: 2.5%;
+  width: 25%;
+  height: 90%;
+}
+
+.playlist-item-image img {
+  height: auto;
+  width: 100%;
+  background-size: cover;
+  border-radius: 15%;
+  box-shadow: 0px 0px 8px white;
+}
+
+.playlist-item-text {
+  flex-grow: 9;
+  margin-left: 15px;
+}
+
+.playlist-item-text img {
+  height: 30%;
+  width: 15%;
+  opacity: 0.85;
+}
+
+.playlist-main {
+  margin-top: 33px;
+  font-size: 1.75rem;
+  line-height: 2rem;
+}
+
+.playlist-sub {
+  margin-top: 10px;
+  font-size: 1.25rem;
+  line-height: 1.25rem;
+}
+
 .song-item {
   display: flex;
   flex-direction: row;
-  margin-top: 15px;
   height: 15%;
+  padding-top: 15px;
   width: 90%;
   margin: auto;
-  margin-top: 15px;
   padding-bottom: 5px;
   border-bottom: 3px solid rgba(255, 255, 255, 0.8);
 }
 
+.songitem-container {
+  background-color: rgba(26, 79, 162, 0.3);
+}
+
 .song-image {
   margin-left: 8px;
-  width: 25%;
+  width: 16.5%;
 }
 
 .song-image img {
   width: 100%;
   height: auto;
-  border-radius: 15%;
-  box-shadow: 0px 0px 5px rgba(255, 255, 255, 0.9);
+  border-radius: 10%;
+  box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.9);
 }
 
 .song-title {
-  font-size: 1.25rem; /* 20px */
-  line-height: 1.75rem; /* 28px */
+  font-size: 1rem; /* 16px */
+  line-height: 1.5rem; /* 24px */
   opacity: 0.9;
 }
 
 .song-sub {
-  font-size: 1rem; /* 16px */
-  line-height: 1.5rem; /* 24px */
+  font-size: 0.75rem;
+  line-height: 1rem;
   opacity: 0.85;
 }
 
 .song-text {
   width: 85%;
-  margin-top: 10px;
-  margin-left: 10px;
+  margin-top: 5px;
+  margin-left: 15px;
 }
 
 .music-player {
@@ -403,6 +446,37 @@ code {
 */
 
 @media screen and (min-width: 1px) and (max-width: 1601px) {
+  .song-item {
+    padding-top: 8px;
+  }
+
+  .playlist-item-text img {
+    height: 25%;
+    width: 15%;
+  }
+
+  .song-title {
+    font-size: 0.75rem; /* 16px */
+    line-height: 0.75rem; /* 24px */
+  }
+
+  .song-sub {
+    font-size: 0.5rem;
+    line-height: 1rem;
+  }
+
+  .playlist-main {
+    margin-top: 25px;
+    font-size: 1.25rem;
+    line-height: 1.5rem;
+  }
+
+  .playlist-sub {
+    margin-top: 5px;
+    font-size: 0.75rem;
+    line-height: 1.25rem;
+  }
+
   .music-title {
     font-size: 0.75rem; /* 12px */
     line-height: 1rem; /* 16px */
