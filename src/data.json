@@ -34,7 +34,7 @@
         "character": [
           ["Candace", "Cyno", "Faruzan", "Tighnari"],
           ["Alhaitham", "Dori", "Layla", "Nahida"],
-          ["Collei", "Nilou", "Wanderer"]
+          ["Collei", "Nilou", "Wanderer", "Dehya"]
         ]
       }
     ],
@@ -132,6 +132,22 @@
     {
       "name": "Time to Shine",
       "sub": "Itto"
+    },
+    {
+      "name": "Devotion of the Keeper",
+      "sub": "Thoma"
+    },
+    {
+      "name": "Disc 1 City of Winds and Idylls",
+      "sub": "Mondstadt"
+    },
+    {
+      "name": "Disc 1 Glazed Moon Over the Tides",
+      "sub": "Liyue"
+    },
+    {
+      "name": "Disc 1 Sakura and Violet Thunder",
+      "sub": "Inazuma"
     }
   ]
 }

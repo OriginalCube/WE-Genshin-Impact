@@ -15,7 +15,7 @@ const MusicPlayer = (props) => {
   const [charName, setCharName] = React.useState("");
   const [replay, setReplay] = React.useState(false);
   const [shuffle, setShuffle] = React.useState(false);
-  const [playlist, setPlaylist] = React.useState(true);
+  const [bgLock, setBgLock] = React.useState(false);
   const [playlistPages, setPlaylistPages] = React.useState(0);
   const intervalRef = React.useRef();
   const audioRef = React.useRef(new Audio());
@@ -54,9 +54,8 @@ const MusicPlayer = (props) => {
       } else {
         tempId = songIndex + 1 < mainData["songs"].length ? songIndex + 1 : 0;
       }
-      console.log(tempId);
       setSongIndex(tempId);
-      props.handleImageId();
+      if (!bgLock) props.handleImageId();
     } else {
       audioRef.current.play();
     }
@@ -146,10 +145,15 @@ const MusicPlayer = (props) => {
     setSongIndex(e);
   };
 
-  const onPlaylist = (e) => {
-    if (e === true) {
-      setPlaylist(true);
-    }
+  const onPlaylist = () => {
+    props.handlePlaylist();
+    //setPlaylist(!playlist);
+    audioBitePlay(0);
+  };
+
+  const onLock = () => {
+    //Background Lock
+    setBgLock(!bgLock);
     audioBitePlay(0);
   };
 
@@ -186,8 +190,8 @@ const MusicPlayer = (props) => {
 
   return (
     <>
-      <div className="playlist">
-        {playlist ? (
+      {props.playlist ? (
+        <div className="playlist">
           <div className="playlist-container">
             <div className="playlist-title">
               <div className="playlist-item-image">
@@ -219,8 +223,8 @@ const MusicPlayer = (props) => {
                 ))}
             </div>
           </div>
-        ) : null}
-      </div>
+        </div>
+      ) : null}
       <div className="genshin-font music-player">
         <div>
           <input
@@ -238,6 +242,7 @@ const MusicPlayer = (props) => {
         <AudioVisualizer />
         <div className="music-player-container">
           <img
+            className="music-player-image"
             src={`./assets/characters/${charName}/${charName}_Frame.webp`}
             alt=""
           />
@@ -247,6 +252,11 @@ const MusicPlayer = (props) => {
               <p className="music-description">{charName + "'s Theme"}</p>{" "}
             </div>
             <div className="music-icons">
+              <img
+                src="./assets/icons/playlist.png"
+                onClick={onPlaylist}
+                alt=""
+              />
               <img
                 src={`./assets/icons/${
                   !replay ? "replay" : "replayToggle"
@@ -284,6 +294,7 @@ const MusicPlayer = (props) => {
                 onClick={onShuffle}
                 alt=""
               />
+              <img src={`./assets/icons/padlock.png`} onClick={onLock} alt="" />
             </div>
           </div>
         </div>

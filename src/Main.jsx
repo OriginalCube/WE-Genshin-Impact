@@ -11,6 +11,7 @@ const Main = () => {
   const [backgroundMode, setBackgroundMode] = React.useState(true);
   const [player, setPlayer] = React.useState(true);
   const [option, setOption] = React.useState(true);
+  const [playlist, setPlaylist] = React.useState(true);
   const [navigation, setNavigation] = React.useState(true);
   const [imageData, setImageData] = React.useState([]);
   const [imageId, setImageId] = React.useState(0);
@@ -40,6 +41,11 @@ const Main = () => {
     }
     setCanvasId(tempCanvas);
     changeMainData(4, { canvasId: tempCanvas });
+  };
+
+  const handlePlaylist = () => {
+    changeMainData(5, { playlist: !playlist });
+    setPlaylist(!playlist);
   };
 
   const handleServer = () => {
@@ -86,21 +92,31 @@ const Main = () => {
   }, [imageData, imageId]);
 
   React.useEffect(() => {
-    if (localStorage.getItem("genshin-02") === null) {
+    try {
+      if (localStorage.getItem("genshin-02")) {
+        const tempData = JSON.parse(localStorage.getItem("genshin-02"));
+        setMainData(tempData);
+        setOption(tempData[0].option);
+        setPlayer(tempData[1].player);
+        setBackgroundMode(tempData[2].backgroundMode);
+        setServerTime(tempData[3].server);
+        setCanvasId(tempData[4].canvasId);
+        setPlaylist(tempData[5].playlist);
+      } else {
+        setOption(true);
+        setPlayer(true);
+        localStorage.setItem(
+          "genshin-02",
+          `[{"option":true},{"player":true},{"backgroundMode":true}, {"server":0}, {"canvasId": 2}, {"playlist":true}] `
+        );
+      }
+    } catch (e) {
       setOption(true);
       setPlayer(true);
       localStorage.setItem(
         "genshin-02",
-        `[{"option":true},{"player":true},{"backgroundMode":true}, {"server":0}, {"canvasId": 2}] `
+        `[{"option":true},{"player":true},{"backgroundMode":true}, {"server":0}, {"canvasId": 2}, {"playlist":true}] `
       );
-    } else {
-      const tempData = JSON.parse(localStorage.getItem("genshin-02"));
-      setMainData(tempData);
-      setOption(tempData[0].option);
-      setPlayer(tempData[1].player);
-      setBackgroundMode(tempData[2].backgroundMode);
-      setServerTime(tempData[3].server);
-      setCanvasId(tempData[4].canvasId);
     }
   }, []);
 
@@ -111,7 +127,13 @@ const Main = () => {
         <img className="image-background" src={mainImage} alt="" />
       ) : null}
       {canvasId > 0 ? <CanvasBackground canvasId={canvasId} /> : null}
-      {player ? <MusicPlayer handleImageId={handleImageId} /> : null}
+      {player ? (
+        <MusicPlayer
+          handleImageId={handleImageId}
+          playlist={playlist}
+          handlePlaylist={handlePlaylist}
+        />
+      ) : null}
       {option ? (
         <OptionBar handleServer={handleServer} serverTime={serverTime} />
       ) : null}
