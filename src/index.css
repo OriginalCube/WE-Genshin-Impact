@@ -118,12 +118,14 @@ code {
   border: 2px solid rgba(255, 255, 255, 0.7);
   overflow: hidden;
   height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .playlist-title {
   display: flex;
   flex-direction: row;
-  height: 22%;
+  height: 20%;
   background-color: rgba(15, 28, 71, 0.4);
   font-size: 1.875rem; /* 30px */
   line-height: 2.25rem; /* 36px */
@@ -171,21 +173,24 @@ code {
 
 .song-item {
   display: flex;
+  padding: 10px;
   height: 15%;
-  padding-top: 3%;
   width: 90%;
   margin: auto;
-  padding-bottom: 5px;
   border-bottom: 3px solid rgba(255, 255, 255, 0.8);
 }
 
 .song-item-container {
+  height: 80%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
   background-color: rgba(26, 79, 162, 0.3);
 }
 
 .song-image {
   margin-left: 8px;
-  width: 20%;
+  width: 25%;
 }
 
 .song-image img {
@@ -463,10 +468,6 @@ code {
 }
 
 @media screen and (min-width: 1px) and (max-width: 1601px) {
-  .song-item {
-    padding-top: 8px;
-  }
-
   .playlist-item-text img {
     height: 25%;
     width: 15%;

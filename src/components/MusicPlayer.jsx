@@ -158,7 +158,7 @@ const MusicPlayer = (props) => {
   };
 
   const onPlaylistPages = () => {
-    if (playlistPages + 1 < mainData["songs"].length / 6) {
+    if (playlistPages + 1 < mainData["songs"].length / 5) {
       setPlaylistPages(playlistPages + 1);
     } else {
       setPlaylistPages(0);
@@ -210,11 +210,11 @@ const MusicPlayer = (props) => {
             </div>
             <div className="song-item-container">
               {mainData["songs"]
-                .slice(playlistPages * 6, playlistPages * 6 + 6)
+                .slice(playlistPages * 5, playlistPages * 5 + 5)
                 .map((e, index) => (
                   <SongItem
                     name={e.name}
-                    id={playlistPages * 6 + index}
+                    id={playlistPages * 5 + index}
                     onChangeId={onChangeId}
                     key={index}
                     charName={e.sub}
