@@ -25,6 +25,12 @@ const OptionBar = (props) => {
     reminderClicked();
   };
 
+  React.useEffect(() => {
+    if (webStatus === true && comStatus === true) {
+      localStorage.setItem("commission-genshin-02", JSON.stringify(new Date()));
+    }
+  }, [comStatus, webStatus]);
+
   const paimonClicked = () => {
     audioPlayer.src = "./assets/audios/Nandayo.mp3";
     audioPlayer.volume = 0.3;
@@ -48,6 +54,23 @@ const OptionBar = (props) => {
       setCurrentDay(2);
     } else if (day === 0) {
       setCurrentDay(4);
+    }
+    if (localStorage.getItem("commission-genshin-02")) {
+      const comDate = Date.parse(
+        JSON.parse(localStorage.getItem("commission-genshin-02"))
+      );
+      console.log(Math.abs(d - comDate));
+      if (Math.abs(d - comDate) > 60000) {
+        setComStatus(false);
+        setWebStatus(false);
+        localStorage.removeItem("commission-genshin-02");
+      } else {
+        setComStatus(true);
+        setWebStatus(true);
+      }
+    } else {
+      setComStatus(false);
+      setWebStatus(false);
     }
   }, []);
 
