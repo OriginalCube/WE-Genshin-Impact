@@ -1,5 +1,14 @@
-Wallpaper Engine! Genshin Impact (Reminder stuff)
+#  Genshin Impact Wallpaper
+This is a web-based wallpaper inspired from Genshin Impact. This website feature daily talent material that reminds the user of dailies and has a music player that
+plays character music to regional music.
 
-Took a lot of work so hopefully you can enjoy it. This is still currently on beta that's why there a problem regarding the Status it will be fixed as soon as I gather the data needed for server reset time per region.
+<img src="https://i.imgur.com/MKH3XX3.png" />
 
-~Created With React FrameWork!
+##  Steam Workshop Link
+
+##  Dev Notes
+This version of the wallpaper is only up to 3.6, I honestly don't know if I'll ever update this because I lost interest in the game. I'll probably create one for 
+Star rail though. 
+
+##  Built with
+React JS - Front-end
