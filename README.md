@@ -2,7 +2,11 @@
 This is a web-based wallpaper inspired from Genshin Impact. This website feature daily talent material that reminds the user of dailies and has a music player that
 plays character music to regional music.
 
+##  Image Background
 <img src="https://i.imgur.com/MKH3XX3.png" />
+
+##  Video Background
+<img src="https://i.imgur.com/n9Lgy7t.png" />
 
 ##  Steam Workshop Link
 [Genshin Impact! 原神! v2.0  ♥ Music Player ♥ Reminder ♥ Visualizer ♥ Media Integration ](https://steamcommunity.com/sharedfiles/filedetails/?id=2938115467)
